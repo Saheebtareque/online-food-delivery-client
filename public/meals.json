@@ -1,0 +1,53 @@
+[
+    {
+        "_id": 1,
+        "name": "French fries",
+        "price": 300,
+        "img": "https://i.ibb.co/ZmhQBqn/fresh-potatoes-fri-with-souce.jpg",
+        "description": "French fries, chips, finger chips, French-fried potatoes, or simply fries are batonnet or allumette-cut deep-fried potatoes, originating from either Belgium or France. They are prepared by cutting the potato into even strips, then drying and frying it, usually in a deep fryer. "
+    },
+
+    {
+        "_id": 2,
+        "name": "Roasted chicken",
+        "price": 500,
+        "img": "https://i.ibb.co/X8mV2dt/Food-Delicious-grilled-chicken-on-the-table.jpg",
+        "description": "Roasting requires a higher temperature (400°F and above) to create a browned, flavorful “crust” on the outside of the food being cooked, while baking occurs at lower oven temperatures (up to 375°F). ... Covered pan: Roasting is typically done in an open, uncovered pan, while items that are baked may be covered."
+    },
+    {
+        "_id": 3,
+        "name": "Burger",
+        "price": 350,
+        "img": "https://i.ibb.co/KLLMWyK/meals-3.jpg",
+        "description": "A hamburger is a food, typically considered a sandwich, consisting of one or more cooked patties—usually ground meat, typically beef—placed inside a sliced bread roll or bun. The patty may be pan fried, grilled, smoked or flame broiled."
+    },
+    {
+        "_id": 4,
+        "name": "Pizza",
+        "price": 699,
+        "img": "https://i.ibb.co/rsRhPbf/meals-4.jpg",
+        "description": "Pizza is a dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven. A small pizza is sometimes called a pizzetta."
+    },
+    {
+        "_id": 5,
+        "name": "Sandwich",
+        "price": 200,
+        "img": "https://i.ibb.co/f1yr2Lm/meals-5.jpg",
+        "description": "A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread, or more generally any dish wherein bread serves as a container or wrapper for another food type.[1][2][3] The sandwich began as a portable, convenient finger food in the Western world, though over time it has become prevalent worldwide."
+    },
+    {
+        "_id": 6,
+        "name": "Sausage",
+        "price": 200,
+        "img": "https://i.ibb.co/xDgb64W/meals-6.jpg",
+        "description": "A sausage is a type of meat product usually made from ground meat, often pork, beef, or poultry, along with salt, spices and other flavourings. Other ingredients such as grains or breadcrumbs may be included as fillers or extenders.The word sausage can refer to the loose sausage meat, which can be formed into patties or stuffed into a skin."
+    },
+    {
+        "_id": 7,
+        "name": "Grilled salmon",
+        "price": 399,
+        "img": "https://i.ibb.co/LRWMtFn/meals-7.jpg",
+        "description": "Salmon is a common food fish classified as an oily fish[1] with a rich content of protein and omega-3 fatty acids.[2] In Norway – a major producer of farmed and wild salmon – farmed and wild salmon differ only slightly in terms of food quality and safety, with farmed salmon having lower content of environmental contaminants, and wild salmon having higher content of omega-3 fatty acids."
+    }
+
+]

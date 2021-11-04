@@ -4,7 +4,8 @@ import { Form,Button} from 'react-bootstrap';
 
 const Subscribe = () => {
     return (
-        <div>
+        <div className="my-5">
+          <h1 className="text-success">Get updated with our new arriving meals:</h1>
            <Form className="my-5 mx-5">
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Control type="email" placeholder="Enter your email here" />

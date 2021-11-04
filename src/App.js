@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import ManageOrders from './components/ManageOrders/ManageOrders';
+import MealDetail from './components/MealDetail/MealDetail';
 import MyOrders from './components/MyOrders/MyOrders';
 import Notfound from './components/Notfound/Notfound';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -37,6 +38,9 @@ function App() {
             <PrivateRoute path="/add-food">
               <AddNew></AddNew>
               </PrivateRoute>
+              <PrivateRoute exact path="/service/:mealId">
+            <MealDetail></MealDetail>
+          </PrivateRoute>
              <Route path="*">
               <Notfound></Notfound>
             </Route>

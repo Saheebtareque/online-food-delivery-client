@@ -5,7 +5,7 @@ const Faqs = () => {
     return (
         <div className="mx-3">
             <h1 className="text-success">FAQS</h1>
-            <Accordion defaultActiveKey="0">
+            <Accordion >
   <Accordion.Item className="my-3" eventKey="0">
     <Accordion.Header>Why choose us?</Accordion.Header>
     <Accordion.Body>
