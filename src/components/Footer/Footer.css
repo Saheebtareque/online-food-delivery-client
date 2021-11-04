@@ -1,0 +1,14 @@
+.footer{
+    margin-top: 100px;
+     background-color: rgb(255, 193, 7);
+     padding: 15px 0px;
+     color:white
+ }
+ 
+ .footer p{
+     display: inline;
+     font-size: 25px;
+     margin-right: 100px;
+     font-weight: 500;
+ }
+ 
