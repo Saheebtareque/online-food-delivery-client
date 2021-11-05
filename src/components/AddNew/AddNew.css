@@ -1,0 +1,10 @@
+.add-meal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-meal form input, textarea{
+    width: 40%;
+    margin-bottom: 10px;
+}

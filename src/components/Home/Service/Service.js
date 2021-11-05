@@ -4,7 +4,8 @@ import './Service.css';
 
 const Service = ({ service }) => {
     // const {service} = props;
-    const { name,price, description ,img, _id} = service;
+    console.log({service});
+    const { name, price, description ,img, _id} = service;
     const history = useHistory();
 
     const mealinfo = () => {

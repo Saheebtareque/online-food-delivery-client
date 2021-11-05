@@ -5,7 +5,7 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('meals.json')
+        fetch('http://localhost:5000/meals')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
