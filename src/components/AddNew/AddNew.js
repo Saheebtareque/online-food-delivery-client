@@ -7,7 +7,7 @@ const AddNew = () => {
     const onSubmit = data => {
         // console.log(data);
 
-        fetch('http://localhost:5000/meals', {
+        fetch('https://afternoon-earth-11436.herokuapp.com/meals', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

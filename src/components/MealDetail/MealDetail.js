@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Card } from 'react-bootstrap';
@@ -6,24 +8,24 @@ import './MealDetail.css';
 import useAuth from '../hooks/useAuth';
 
 const MealDetail = () => {
-    const { user,} = useAuth();
+    const { user, } = useAuth();
     const { mealId } = useParams();
     const history = useHistory();
     const [mealdetail, setMealdetail] = useState({});
-    const { register, handleSubmit,reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     useEffect(() => {
-        fetch(`http://localhost:5000/meals/${mealId}`)
+        fetch(`https://afternoon-earth-11436.herokuapp.com/meals/${mealId}`)
             .then(res => res.json())
             .then(data => {
                 setMealdetail(data)
             }
-                );
+            );
     }, [])
 
-    const onSubmit = data =>  {
+    const onSubmit = data => {
         console.log(data);
 
-        fetch('http://localhost:5000/orderedmeals', {
+        fetch('https://afternoon-earth-11436.herokuapp.com/orderedmeals', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +35,7 @@ const MealDetail = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
-                    alert('New Meal Inserted ');
+                    alert('meal order placed');
                     reset();
                 }
             })
@@ -62,34 +64,34 @@ const MealDetail = () => {
             <div className="meal-form my-5">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label> Order ID:</label>
-                    <input {...register("orderId", { required:true, maxLength: 20 })}/>
+                    <input {...register("orderId", { required: true} )} />
 
                     <label> Order status:</label>
-                    <input {...register("orderStatus", { required: true, maxLength: 20 })} placeholder="pending"  />
+                    <input {...register("orderStatus", { required: true})} placeholder="pending" />
 
                     <label> Amount to be paid:</label>
-                    <input {...register("price", { required: true, maxLength: 20 })}/>
+                    <input {...register("price", { required: true})} />
 
 
 
                     <label> Meal: </label>
-                    <input {...register("meal", { required: true, maxLength: 20 })} placeholder="Name of the meal" />
-                    
+                    <input {...register("meal", { required: true})} placeholder="Name of the meal" />
+
                     <h3> User information: </h3>
 
                     <label> Name: </label>
-                    <input {...register("uName", { required: true, maxLength: 20 })}/>
+                    <input {...register("uName", { required: true })} />
 
 
                     <label> Email address: </label>
-                    <input {...register("email", { required: true})}/>
+                    <input {...register("email", { required: true })} />
 
                     <label> Address: </label>
-                    <input {...register("address", { required: true, maxLength: 20 })} />
+                    <input {...register("address", { required: true })} />
                     <label> contact number: </label>
-                    <input type="number"  {...register("phone", { required: true, maxLength: 20 })}  />
+                    <input type="number"  {...register("phone", { required: true, maxLength: 20 })} />
 
-                    
+
                     <input type="submit" />
                 </form>
             </div>
