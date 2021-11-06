@@ -9,17 +9,35 @@ const MealDetail = () => {
     const { user,} = useAuth();
     const { mealId } = useParams();
     const history = useHistory();
-    const [mealdetail, setMealdetail] = useState({})
-    const { register, handleSubmit, } = useForm();
+    const [mealdetail, setMealdetail] = useState({});
+    const { register, handleSubmit,reset } = useForm();
     useEffect(() => {
         fetch(`http://localhost:5000/meals/${mealId}`)
             .then(res => res.json())
-            .then(data => setMealdetail(data));
+            .then(data => {
+                setMealdetail(data)
+            }
+                );
     }, [])
 
-    const onSubmit = data => {
+    const onSubmit = data =>  {
         console.log(data);
-     };
+
+        fetch('http://localhost:5000/orderedmeals', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged === true) {
+                    alert('New Meal Inserted ');
+                    reset();
+                }
+            })
+    }
 
     const handleClick = () => {
         history.push('/home');
@@ -44,27 +62,27 @@ const MealDetail = () => {
             <div className="meal-form my-5">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label> Order ID:</label>
-                    <input {...register("orderId", { required:true, maxLength: 20 })}value={mealId || '' } />
+                    <input {...register("orderId", { required:true, maxLength: 20 })}/>
 
                     <label> Order status:</label>
-                    <input {...register("orderStatus", { required: true, maxLength: 20 })}  value="pending" />
+                    <input {...register("orderStatus", { required: true, maxLength: 20 })} placeholder="pending"  />
 
                     <label> Amount to be paid:</label>
-                    <input {...register("price", { required: true, maxLength: 20 })} value= {mealdetail.price || ''}/>
+                    <input {...register("price", { required: true, maxLength: 20 })}/>
 
 
 
                     <label> Meal: </label>
-                    <input {...register("meal", { required: true, maxLength: 20 })} placeholder="Name of the meal" value={mealdetail.name || ''} />
+                    <input {...register("meal", { required: true, maxLength: 20 })} placeholder="Name of the meal" />
                     
                     <h3> User information: </h3>
 
                     <label> Name: </label>
-                    <input {...register("uName", { required: true, maxLength: 20 })}  value={user.displayName || ''} />
+                    <input {...register("uName", { required: true, maxLength: 20 })}/>
 
 
                     <label> Email address: </label>
-                    <input {...register("email", { required: true, maxLength: 20 })}  value={user.email || ''} />
+                    <input {...register("email", { required: true})}/>
 
                     <label> Address: </label>
                     <input {...register("address", { required: true, maxLength: 20 })} />

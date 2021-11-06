@@ -14,10 +14,9 @@ const AddNew = () => {
             },
             body: JSON.stringify(data),
         })
-            .then(res=>res.json())
-            .then(data=>{
-                if(data.acknowledged === true)
-                {
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged === true) {
                     alert('New Meal Inserted ');
                     reset();
                 }
@@ -27,9 +26,7 @@ const AddNew = () => {
         <div className="add-meal my-5">
             <h1 className="my-5"> Please add a new meal:</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label> your name: </label>
                 <input {...register("name", { required: true, maxLength: 20 })} placeholder="Name of the meal" />
-                <p> your name: </p>
                 <input {...register("img")} placeholder="image url of meal" />
                 <input type="number" {...register("price")} placeholder="price" />
                 <textarea {...register("description")} placeholder="Description of the meal" />
