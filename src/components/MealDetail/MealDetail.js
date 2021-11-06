@@ -18,9 +18,10 @@ const MealDetail = () => {
             .then(res => res.json())
             .then(data => {
                 setMealdetail(data)
+                reset(data)
             }
             );
-    }, [])
+    }, [reset,mealId])
 
     const onSubmit = data => {
         console.log(data);
@@ -62,36 +63,36 @@ const MealDetail = () => {
 
 
             <div className="meal-form my-5">
-                <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                     <label> Order ID:</label>
-                    <input {...register("orderId", { required: true} )} />
+                    <input {...register("orderId", {})}defaultValue={mealId} />
 
                     <label> Order status:</label>
-                    <input {...register("orderStatus", { required: true})} placeholder="pending" />
+                    <input {...register("orderStatus", {})}  defaultValue="pending" />
 
                     <label> Amount to be paid:</label>
-                    <input {...register("price", { required: true})} />
+                    <input {...register("price", { })} defaultValue= {mealdetail.price}/>
 
 
 
                     <label> Meal: </label>
-                    <input {...register("meal", { required: true})} placeholder="Name of the meal" />
-
-                    <h3> User information: </h3>
+                    <input {...register("meal", {})} placeholder="Name of the meal" defaultValue={mealdetail.name} />
+                    
+                   
 
                     <label> Name: </label>
-                    <input {...register("uName", { required: true })} />
+                    <input {...register("uName", {})}  defaultValue={user.displayName} />
 
 
                     <label> Email address: </label>
-                    <input {...register("email", { required: true })} />
+                    <input {...register("email", { })}  defaultValue={user.email} />
 
                     <label> Address: </label>
                     <input {...register("address", { required: true })} />
                     <label> contact number: </label>
-                    <input type="number"  {...register("phone", { required: true, maxLength: 20 })} />
+                    <input type="number"  {...register("phone", { required: true})}  />
 
-
+                    
                     <input type="submit" />
                 </form>
             </div>
